@@ -1,4 +1,4 @@
-# fitnessscheduletracker
+# Gymmie
 
 An app to track schedule of fitness activities
 
