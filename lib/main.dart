@@ -1,4 +1,5 @@
 import 'package:fitnessscheduletracker/pages/Home.dart';
+import 'package:fitnessscheduletracker/pages/WorkoutSessionDetails.dart';
 import 'package:fitnessscheduletracker/utils/HexColor.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => Home(),
+        '/workout_session_details': (context) => WorkoutSessionDetails(),
       },
 //      theme: ThemeData(
 //        fontFamily: 'SegoeUI',

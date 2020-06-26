@@ -20,10 +20,6 @@ class Home extends StatelessWidget {
     Random rn = Random();
     int pic_num = rn.nextInt(5) + 1;
 
-//    List workoutSessions = [
-//      WorkoutSession(1, 3, 3, "Chest, Back, Biceps"),
-//    ];
-
     WorkoutSession monday = WorkoutSession(1, 3, 3, "Chest, Back, Biceps");
 
     return Scaffold(
@@ -50,6 +46,9 @@ class Home extends StatelessWidget {
                   headContent: this.workoutSessions[index].getCardHeadContent(),
                   bodyContent: this.workoutSessions[index].getCardBodyContent(),
                   colorScheme: this.workoutSessions[index].getColorCombo(),
+                  cardPress: () {
+                    Navigator.pushNamed(context, '/workout_session_details');
+                  },
                 );
               },
               separatorBuilder: (BuildContext context, int index) =>
