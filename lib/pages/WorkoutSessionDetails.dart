@@ -87,7 +87,9 @@ class WorkoutSessionDetails extends StatelessWidget {
             ),
 //            Image.asset('assets/exercises/chest_press.gif'),
             HeadedCard(
-              cardPress: () {},
+              cardPress: () {
+                Navigator.pushNamed(context, '/exercise_details');
+              },
               usePad: false,
               headContent: Image.asset(
                 'assets/exercises/chest_press.gif',
@@ -124,7 +126,9 @@ class WorkoutSessionDetails extends StatelessWidget {
               height: 6.0,
             ),
             HeadedCard(
-              cardPress: () {},
+              cardPress: () {
+                Navigator.pushNamed(context, '/exercise_details');
+              },
               usePad: false,
               headContent: Image.asset(
                 'assets/exercises/Inclined Dumbbell Flies.gif',
