@@ -47,7 +47,13 @@ class Home extends StatelessWidget {
                   bodyContent: this.workoutSessions[index].getCardBodyContent(),
                   colorScheme: this.workoutSessions[index].getColorCombo(),
                   cardPress: () {
-                    Navigator.pushNamed(context, '/workout_session_details');
+                    WorkoutSession ws = this.workoutSessions[index];
+                    String day = ws.getDayName();
+                    Navigator.pushNamed(
+                      context,
+                      '/workout_session_details',
+                      arguments: {"day": day},
+                    );
                   },
                 );
               },

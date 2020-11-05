@@ -14,6 +14,10 @@ class WorkoutSession {
     this.getColorCombo();
   }
 
+  String getDayName() {
+    return this.day_name;
+  }
+
   String _setDayName(int day_number) {
     if (day_number == 1) {
       return 'Monday';

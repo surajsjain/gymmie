@@ -7,19 +7,31 @@ class ExerciseDetails extends StatefulWidget {
 }
 
 class _ExerciseDetailsState extends State<ExerciseDetails> {
-  YoutubePlayerController _controller = YoutubePlayerController(
-    initialVideoId: 'VmB1G1K7v94',
-    flags: YoutubePlayerFlags(
-      autoPlay: false,
-      mute: false,
-    ),
-  );
+  // YoutubePlayerController _controller = YoutubePlayerController(
+  //   initialVideoId: 'VmB1G1K7v94',
+  //   flags: YoutubePlayerFlags(
+  //     autoPlay: false,
+  //     mute: false,
+  //   ),
+  // );
 
   int n_sets_completed = 0;
   int sets_lim = 3;
 
   @override
   Widget build(BuildContext context) {
+    Map inData = ModalRoute.of(context).settings.arguments;
+
+    YoutubePlayerController ctrler = YoutubePlayerController(
+      initialVideoId: inData['video'], //'VmB1G1K7v94',
+      flags: YoutubePlayerFlags(
+        autoPlay: false,
+        mute: false,
+      ),
+    );
+
+    this.sets_lim = inData['sets'];
+
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       body: Column(
@@ -27,7 +39,7 @@ class _ExerciseDetailsState extends State<ExerciseDetails> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           YoutubePlayer(
-            controller: _controller,
+            controller: ctrler,
             showVideoProgressIndicator: true,
             progressIndicatorColor: Colors.lightGreenAccent,
             progressColors: ProgressBarColors(
@@ -48,7 +60,8 @@ class _ExerciseDetailsState extends State<ExerciseDetails> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    'Chest Press',
+                    // 'Chest Press',
+                    inData['name'],
                     style: TextStyle(
                       fontSize: 38,
                       fontWeight: FontWeight.bold,
@@ -59,7 +72,7 @@ class _ExerciseDetailsState extends State<ExerciseDetails> {
                     height: 12.0,
                   ),
                   Text(
-                    'No. of reps: 10',
+                    'No. of reps: ${inData['reps']}',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
@@ -70,7 +83,7 @@ class _ExerciseDetailsState extends State<ExerciseDetails> {
                     height: 4.0,
                   ),
                   Text(
-                    'Sets: 3',
+                    'Sets: ${inData['sets']}',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
@@ -81,7 +94,7 @@ class _ExerciseDetailsState extends State<ExerciseDetails> {
                     height: 4.0,
                   ),
                   Text(
-                    'Dumble Wright: 7.5 lbs',
+                    'Dumble Wright: ${inData['weight']} lbs',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,
