@@ -1,6 +1,6 @@
 # Gymmie
 
-An app to track schedule of fitness activities
+An app to track schedule of fitness activities.
 
 ## Getting Started
 
