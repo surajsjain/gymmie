@@ -265,6 +265,7 @@ class _WorkoutSessionDetailsState extends State<WorkoutSessionDetails> {
             ),
             SizedBox(
               height: 6.0,
+              
             ),
           ],
         ),
