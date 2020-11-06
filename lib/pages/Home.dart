@@ -5,6 +5,7 @@ import 'package:fitnessscheduletracker/utils/workout/WorkoutSession.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+
 class Home extends StatelessWidget {
   List workoutSessions = [
     WorkoutSession(1, 3, 3, "Chest, Back, Biceps"),
