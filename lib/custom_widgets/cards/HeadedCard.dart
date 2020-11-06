@@ -3,6 +3,7 @@ import 'package:fitnessscheduletracker/utils/color_schemes/ColorCombo.dart';
 import 'package:flutter/material.dart';
 
 class HeadedCard extends StatelessWidget {
+  
   const HeadedCard({
     Key key,
     @required this.headContent,
